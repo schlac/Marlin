@@ -7934,17 +7934,19 @@ inline void gcode_T(uint8_t tmp_extruder) {
   #endif
 }
 
-void SetUpFAN2_PIN()
-{
+void SetUpFAN2_PIN() {
     SET_OUTPUT(KosselFAN2_PIN);
     WRITE(KosselFAN2_PIN, LOW);  
 }
-void Fan2Scan()
-{
-  if(thermalManager.degHotend(0)>60)
-  WRITE(KosselFAN2_PIN, HIGH);
-  else WRITE(KosselFAN2_PIN, LOW);
+
+void Fan2Scan() {
+  if(thermalManager.degHotend(0) > 60) {
+    WRITE(KosselFAN2_PIN, HIGH);
+  } else {
+    WRITE(KosselFAN2_PIN, LOW);
+  }
 }
+
 /**
  * Process a single command and dispatch it to its handler
  * This is called from the main loop()
@@ -10105,7 +10107,7 @@ void idle(
   #endif
 ) {
   lcd_update();
-  Fan2Scan();
+
   host_keepalive();
 
   #if ENABLED(AUTO_REPORT_TEMPERATURES) && (HAS_TEMP_HOTEND || HAS_TEMP_BED)
@@ -10361,7 +10363,7 @@ void loop() {
   #if ENABLED(SDSUPPORT)
     card.checkautostart(false);
   #endif
-
+  Fan2Scan();
   if (commands_in_queue) {
 
     #if ENABLED(SDSUPPORT)
