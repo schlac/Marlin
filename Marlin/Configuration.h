@@ -135,11 +135,11 @@
 
 // Optional custom name for your RepStrap or other custom machine
 // Displayed in the LCD "Ready" message
-#define CUSTOM_MACHINE_NAME "Anycubic plus"
+#define CUSTOM_MACHINE_NAME "ANYCUBIC+"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
-//#define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
+#define MACHINE_UUID "ce3f6762-b1dd-4ee2-8adb-633e8835d3c2"
 
 // This defines the number of extruders
 // :[1, 2, 3, 4]
